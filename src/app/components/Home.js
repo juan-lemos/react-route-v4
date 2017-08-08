@@ -12,7 +12,7 @@ export class Home extends React.Component {
             this.setState({
                 status : this.state.status + 1
             })
-        }, 100)
+        }, 3000)
     }
 
     onMakeOlder() {
