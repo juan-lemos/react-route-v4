@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router, Route, BrowserRouter, Switch } from "react-router-dom";
+import { Router, Route, BrowserRouter, Switch, Redirect } from "react-router-dom";
 
 
 
@@ -12,11 +12,13 @@ import { User } from "./components/User"
 const App = () => (
     <Root>
         <Switch>
-            <Route exact path={"/"} component={Home} />
+            <Route exact path={"/"} render={() => (
+                <Redirect to="/home" />
+            )} />
             <Route path={"/home"} component={Home} />
-            <Route path={"/user/:id"} component={User} /> 
+            <Route path={"/user/:id"} component={User} />
         </Switch>
-    </Root>
+    </Root >
 )
 
 
